@@ -17,45 +17,61 @@ create a function in child class to print a message.
 ## Program:
 ```
 using System;
-namespace abc
+namespace ex8
+
 {
-    class Tyre
+    public class tyre
     {
-        public Tyre()
+        public tyre()
         {
-            Console.Write("Tyre has been inserted ");
+            Console.WriteLine("Base class tyre:");
+        }
+        public virtual void Display()
+        {
+            Console.WriteLine("tyre");
+        }
+
+    }
+    public class scooter : tyre
+    {
+        public scooter()
+        {
+            Console.WriteLine("for the Scooter");
+        }
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine("scooter");
         }
     }
-    class Scooter : Tyre
+    public class car : tyre
     {
-        public void display()
+        public car()
         {
-            Console.Write("For the scooter ");
+            Console.WriteLine("for the car");
+        }
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine("car");
         }
     }
-    class Car : Tyre
+    public class program
     {
-        public void display()
+        static void Main(string[] args)
         {
-            Console.Write("For the car ");
-        }
-    }
-    public class yz
-    {
-        public static void Main(string[] args)
-        {
-            Scooter s1 = new Scooter();
-            s1.display();
-            Console.WriteLine();
-            Car c1 = new Car();
-            c1.display();
+            car car = new car();
+            scooter scooter = new scooter();
+            car.Display();
+            scooter.Display();
+
         }
     }
 }
 ```
 
 ## Output:
-![o](ex8c.png)
+![o](ex8cc.png)
 
 ## Result
 Thus C# program to print some messages using hierarchical inheritance is written and executed sucessfully.
